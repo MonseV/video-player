@@ -1,0 +1,71 @@
+@import './buttons.css';
+
+body {
+  background-color: #26B4BC;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper {
+  max-inline-size: 900px;
+  margin: auto;
+}
+
+.player {
+  margin-block-start: 100px ;
+  /* border: 10px solid red; */
+  position: relative;
+}
+
+.player video {
+  inline-size: 100%;
+  aspect-ratio: 16/9; /* mantiene la relacion de aspecto */
+  vertical-align: middle; /* alineación vertical de un cuadro en línea, de bloque en línea o de celda de tabla */
+  object-fit: cover; /* cover -> dimensiona para mantener su relación de aspecto mientras llena el cuadro de contenido completo del elemento */
+}
+
+.player-title {
+  color: white;
+  position: absolute;
+  inset-block-start: 0px;
+  inset-inline-start: 20px;
+}
+
+.player-actions {
+  position: absolute;
+  inset: 0px;
+  /* Es lo mismo que solo inset
+  inset-block-end: 0;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  inset-inline-start: 0; */
+  /* border: 10px solid blue; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* espacio */
+  /* z-index: 2; */ /* indica el orden de un elemento posicionado y sus descendientes
+                 Cuando varios elementos se superponen, los elementos con mayor valor z-index cubren aquellos con menor valor. */
+}
+
+.player-progress {
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline: 0;
+  display: flex;
+  padding: 10px;
+}
+
+.player-progress input {
+  flex: 1;
+}
+
+.player-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: .3s opacity;
+}
+
+.player:hover .player-overlay {
+  opacity: 1;
+}
